@@ -1,0 +1,27 @@
+% <<accknowledgement>>
+\newenvironment{acknowledgement}{
+    \clearpage
+    \aftermatter
+    \chapter*{致\wsp[1]谢}
+    \addcontentsline{toc}{chapter}{致谢}
+}{\clearpage}
+
+% <<profile>>
+\newenvironment{profile}{
+    \clearpage
+    \aftermatter
+    \chapter*{个人简历、在学期间发表的学术论文与研究成果}
+    \addcontentsline{toc}{chapter}{个人简历}
+    \section*{个人简历}
+}{\par}
+
+% <<my paper>>
+\newenvironment{mypaper}{
+    \aftermatter
+    \section*{发表的学术论文}
+    \begin{enumerate}
+        \renewcommand{\labelenumi}{[\theenumi] }
+}{
+    \end{enumerate}
+    \clearpage
+}

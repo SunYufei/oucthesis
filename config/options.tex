@@ -1,0 +1,18 @@
+\usepackage{kvoptions}
+\SetupKeyvalOptions{
+    family  = oucthesis,
+    prefix  =
+}
+
+\DeclareBoolOption[true]{Print}
+\DeclareStringOption{Title}
+\DeclareStringOption{TitleEng}
+\DeclareStringOption{Author}
+\DeclareStringOption{Advisor}
+\DeclareStringOption{Thesis}
+\DeclareStringOption{Major}
+\DeclareStringOption{Topic}
+\DeclareStringOption{Year}
+\DeclareStringOption{Month}
+\DeclareStringOption{Day}
+\ProcessKeyvalOptions*

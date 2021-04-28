@@ -1,0 +1,13 @@
+\newcommand{\bibstyle@super}{\bibpunct{[}{]}{,}{s}{,}{\textsuperscript{,}}}
+\citestyle{super}
+\renewcommand{\bibfont}{\fontsize{10.5bp}{20bp}\selectfont}
+\setlength{\bibsep}{0pt plus .2pt}
+\setlength{\bibhang}{2\ccwd}
+\renewcommand{\@biblabel}[1]{[#1]\hfill}
+\newcommand{\makebib}[1]{
+    \clearpage
+    \aftermatter
+    \bibliographystyle{config/oucauthoryear}
+    \bibliography{#1}
+    \addcontentsline{toc}{chapter}{参考文献}
+}

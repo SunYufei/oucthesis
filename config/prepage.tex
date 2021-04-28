@@ -1,0 +1,141 @@
+% << blank page for print version >>
+\newcommand{\blankpage}{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \clearpage
+}
+
+\newcommand{\makethanks}[1]{
+    \clearpage
+    \thispagestyle{empty}
+    \vspace*{5em}
+    \begin{center}
+        \sffamily\Large{#1}
+    \end{center}
+    \begin{flushright}
+        \sffamily\Large{————\Author}
+    \end{flushright}
+    \clearpage
+    \ifPrint\blankpage\fi
+}
+
+\newcommand{\makesign}{
+    \clearpage
+    \thispagestyle{empty}
+    \vspace*{\fill}
+    \begin{center}
+        \sffamily\Large{\Title}
+    \end{center}
+    \vspace*{\fill}
+    \begin{flushright}
+        学位论文完成日期：\uline{\makebox[30mm]{}} \par
+        指导教师签字：\uline{\makebox[30mm]{}} \par
+        答辩委员会成员签字：\uline{\makebox[30mm]{}} \par
+        \uline{\makebox[30mm]{}} \par
+        \uline{\makebox[30mm]{}} \par
+        \uline{\makebox[30mm]{}} \par
+        \uline{\makebox[30mm]{}} \par
+        \uline{\makebox[30mm]{}} \par
+    \end{flushright}
+    \vspace*{\fill}
+    \clearpage
+    \ifPrint\blankpage\fi
+}
+
+\newcommand{\makecopyright}{
+    \thispagestyle{empty}
+    \begin{center}
+        \sffamily\Large{独\wsp[1]创\wsp[1]声\wsp[1]明}
+    \end{center}
+    
+    本人声明所呈交的学位论文是本人在导师指导下进行的研究工作及取得的研究成果。据我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含未获得\uline{（注：如没有其他} \uline{需要特别声明的，本栏可空）}或其他教育机构的学位或证书使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示谢意。
+    
+    \par\vspace{3em}
+    \noindent 学位论文作者签名：\wsp[10]签字日期：\wsp[3]年\wsp[2]月\wsp[2]日\par
+    \noindent\rule{\textwidth}{0.5pt}
+    \begin{center}
+        \sffamily\Large{学位论文版权使用授权书}
+    \end{center}
+    
+    本学位论文作者完全了解学校有关保留、使用学位论文的规定，并同意以下事项：
+    
+    1.学校有权保留并向国家有关部门或机构送交论文的复印件和磁盘，允许论文被查阅和借阅。
+    
+    2.学校可以将学位论文的全部或部分内容编入有关数据库进行检索，可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。同时授权清华大学“中国学术期刊（光盘版）电子杂志社”用于出版和编入CNKI《中国知识资源总库》，授权中国科学技术信息研究所将本学位论文收录到《中国学位论文全文数据库》。（保密的学位论文在解密后适用本授权书）
+    
+    \vspace{3em}
+    \noindent 学位论文作者签名：\wsp[10]导师签字：\wsp[8]\par
+    \vspace{1em}
+    \noindent 签字日期：\wsp[3]年\wsp[2]月\wsp[2]日\wsp[4]签字日期：\wsp[3]年\wsp[2]月\wsp[2]日
+    \clearpage
+    \ifPrint\blankpage\fi
+}
+
+% << page number >>
+\newcommand{\pagenumberingnoreset}[1]{
+    \gdef\thepage{\csname @#1\endcsname\c@page}
+}
+
+% << Chinese abstract >>
+\newcommand{\keywords}[1]{\def\ouc@keywords{#1}}
+\newenvironment{abstract}{
+    \clearpage
+    \pagestyle{plain}
+    \pagenumbering{Roman}
+    \begin{center}
+        \sffamily\Large{\Title}\par
+        \sffamily\Large{摘\wsp[1]要}
+    \end{center}
+    \addcontentsline{toc}{chapter}{摘要}
+    \vspace{1em}
+}{
+    \par\null\par\noindent
+    \sffamily{关键词：\ouc@keywords}
+    \clearpage
+    \pagestyle{title}
+    \pagenumberingnoreset{arabic}
+}
+
+% << English abstract >>
+\newcommand{\enkeywords}[1]{\def\ouc@enkeywords{#1}}
+\newenvironment{enabstract}{
+    \clearpage
+    \pagestyle{plain}
+    \pagenumberingnoreset{Roman}
+    \begin{center}
+        \bfseries\Large{\TitleEng}\par
+        \Large{Abstract}
+    \end{center}
+    \addcontentsline{toc}{chapter}{Abstract}
+    \vspace{1em}
+}{
+    \par\null\par\noindent
+    \textbf{Key Words}: \ouc@enkeywords
+    \clearpage
+    \pagestyle{title}
+    \pagenumberingnoreset{arabic}
+}
+
+% << toc >>
+\renewcommand{\tableofcontents}{
+    \pagestyle{empty}
+    \begin{center}
+        \sffamily\Large{目\wsp[1]录}
+    \end{center}
+    \@starttoc{toc}
+    \clearpage
+    \pagestyle{title}
+}
+
+\titlecontents{chapter}[\z@]{\fontsize{14}{25.67}\selectfont}{
+    \contentspush{\thecontentslabel\unskip\hspace{\ccwd}}
+}{}{\titlerule*[4bp]{\textperiodcentered}\contentspage}
+
+\titlecontents{section}[2\ccwd]{\normalsize}{
+    \contentspush{\thecontentslabel\hspace{\ccwd}}
+}{}{\titlerule*[4bp]{\textperiodcentered}\contentspage}
+
+\titlecontents{subsection}[4\ccwd]{\normalsize}{
+    \contentspush{\thecontentslabel\hspace{\ccwd}}
+}{}{\titlerule*[4bp]{\textperiodcentered}\contentspage}

@@ -1,0 +1,122 @@
+\documentclass[
+    Print       = false,
+    Title       = 中国海洋大学硕博学位论文LaTeX模板,
+    Author      = 作者,
+    Advisor     = 指导教师,
+    Thesis      = 全日制专业学位,
+    Major       = 专业名称,
+    Topic       = 研究方向,
+    Year        = 2021,
+    Month       = 4,
+    Day         = 28,
+    TitleEng    = {{LaTeX template for master's and doctoral dissertations of Ocean University of China}}
+]{oucthesis}
+
+\begin{document}
+    % 封皮
+    \makefrontcover
+    
+    % 致谢
+    \makethanks{谨以此文献给敬爱的老师、家人和朋友们！}
+    
+    % 签名页
+    \makesign
+    
+    % 独创声明
+    \makecopyright
+
+    % 中英文摘要
+    \begin{abstract}
+        中文摘要
+
+        \keywords{关键词1；关键词2；关键词3}
+    \end{abstract}
+
+    \begin{enabstract}
+        English abstract
+        \enkeywords{Keyword 1; Keyword 2; Keyword 3}
+    \end{enabstract}
+    
+    % 目录
+    \tableofcontents
+    
+    \mainmatter
+
+    \chapter{简介}
+
+    \section{一级标题}
+
+    \subsection{二级标题}
+
+    \subsubsection{三级标题}
+
+    \chapter{公式、图与表}
+
+    \section{公式插入}
+
+    一元二次方程如公式(\ref{eq:})所示。
+
+    \begin{equation}
+        y=ax^2+bx+c
+        \label{eq:}
+    \end{equation}
+
+    \section{图片插入}
+
+    中国海洋大学校徽如图 \ref{fig:ouc} 所示。
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=.5\textwidth]{img/ouc.jpg}
+        \caption{中国海洋大学校徽}
+        \label{fig:ouc}
+    \end{figure}
+
+    \section{表格插入}
+
+    表 \ref{tab:} 是表格的一个示例。
+
+    \begin{table}[h]
+        \centering
+        \caption{一元二次方程参数描述}
+        \begin{tabular}{cc}
+            \toprule
+            参数&描述\\
+            \midrule
+            $a$&二次项系数\\
+            $b$&一次项系数\\
+            $c$&常数项\\
+            \bottomrule
+        \end{tabular}
+        \label{tab:}
+    \end{table}
+
+    \chapter{文献引用}
+
+    TensorFlow\cite{abadi2016tensorflow}是一个基于数据流编程（Dataflow Programming）的符号数学系统，被广泛应用于各类机器学习（Machine Learning）算法的编程实现，其前身是谷歌的神经网络算法库DistBelief。
+
+    % 参考文献
+    \makebib{cite}
+    
+    % 致谢
+    \begin{acknowledgement}
+        致谢内容
+    \end{acknowledgement}
+
+    % 个人简历
+    \begin{profile}
+        1996年X月X日出生于XX省XX市。
+
+        2014年9月考入XX大学XX专业，2018年6月本科毕业并获得工学学士学位。
+
+        2018年9月考入中国海洋大学XX学院XX专业攻读硕士学位至今。
+    \end{profile}
+
+    % 发表的学术论文
+    \begin{mypaper}
+        \item SAN Z, SI L, WU W. Research on Something that is Important[C]. CVPR 2021: volume 1. IEEE, 2021: I-I
+    \end{mypaper}
+
+    % 封皮
+    \makebackcover
+\end{document}

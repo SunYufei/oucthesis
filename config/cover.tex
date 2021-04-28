@@ -1,0 +1,36 @@
+\newcommand{\makefrontcover}{
+    \thispagestyle{empty}
+    \newgeometry{
+        left=7.2cm,
+        right=4.6cm,
+        top=10.6cm,
+        bottom=0cm,
+    }
+    \ThisTileWallPaper{\paperwidth}{\paperheight}{config/front-cover.jpg}
+    \begin{center}
+        \sffamily\noindent{
+            \large\Title\\
+            \vspace*{1.15em}
+            \fontsize{15bp}{10bp}\selectfont\TitleEng\\
+            \fontsize{15bp}{27bp}\selectfont\Author\\
+            \fontsize{15bp}{26bp}\selectfont{
+                \Advisor\\\Thesis\\\Major\\\Topic\\
+            }
+        }
+    \end{center}
+    \vspace*{20.5em}
+    \begin{flushleft}
+        \sffamily
+        \fontsize{14bp}{11bp}\selectfont
+        \wsp[2.75]\Year\wsp[1.7]\Month\wsp[1.6]\Day
+    \end{flushleft}
+    \clearpage
+    \restoregeometry
+}
+
+\newcommand{\makebackcover}{
+    \clearpage
+    \thispagestyle{empty}
+    \ThisTileWallPaper{\paperwidth}{\paperheight}{config/back-cover.jpg}
+    \wsp[1]
+}
