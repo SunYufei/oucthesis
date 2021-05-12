@@ -61,6 +61,7 @@
 \setitemize[1]{itemsep=0pt,topsep=0pt,parsep=0pt}
 
 % << chapter >>
+\ifPrint\@openrighttrue\else\@openrightfalse\fi
 \renewcommand{\chapter}{
   \if@openright\cleardoublepage\else\clearpage\fi
   \global\@topnum\z@

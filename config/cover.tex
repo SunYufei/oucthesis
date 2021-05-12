@@ -1,4 +1,5 @@
 \newcommand{\makefrontcover}{
+    \ifPrint\else
     \thispagestyle{empty}
     \newgeometry{
         left=7.2cm,
@@ -26,11 +27,14 @@
     \end{flushleft}
     \clearpage
     \restoregeometry
+    \fi
 }
 
 \newcommand{\makebackcover}{
+    \ifPrint\else
     \clearpage
     \thispagestyle{empty}
     \ThisTileWallPaper{\paperwidth}{\paperheight}{config/back-cover.jpg}
     \wsp[1]
+    \fi
 }

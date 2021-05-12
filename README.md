@@ -5,10 +5,10 @@
 
 已测试兼容：
 
-- MiKTeX (Windows)
+- MiKTeX
 - Overleaf
 
-使用方法请见 `main.tex`
+正文使用方法请见 `main.tex`，A3 封皮使用方法请见 `cover.tex`
 
 ## 致谢
 

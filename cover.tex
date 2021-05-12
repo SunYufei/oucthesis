@@ -1,0 +1,49 @@
+\documentclass[a3paper]{ctexart}
+\usepackage[landscape]{geometry}
+\usepackage{wallpaper}
+\usepackage{xeCJK}
+
+% params
+\newcommand{\wsp}[1][1]{\hspace{#1\ccwd}}
+\newcommand{\Title}{中国海洋大学硕博学位论文LaTeX模板}
+\newcommand{\TitleEng}{LaTeX Template for Master's and Doctoral Dissertations of Ocean University of China}
+\newcommand{\Author}{作者}
+\newcommand{\Advisor}{指导老师}
+\newcommand{\Thesis}{全日制专业学位}
+\newcommand{\Major}{专业名称}
+\newcommand{\Topic}{研究方向}
+\newcommand{\Date}{2021\wsp[1.7]5\wsp[1.6]22}
+
+% font
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setCJKmainfont{SimSun}
+\setCJKsansfont{SimHei}
+
+\begin{document}
+    \thispagestyle{empty}
+    \newgeometry{
+        left=28.2cm,
+        right=4.6cm,
+        top=10.6cm,
+        bottom=0cm,
+    }
+    \ThisTileWallPaper{\paperwidth}{\paperheight}{config/cover.jpg}
+    \begin{center}
+        \sffamily\noindent{
+            \fontsize{15bp}{27.5bp}\Title\\
+            \vspace*{1.9em}
+            \fontsize{15bp}{10bp}\selectfont\TitleEng\\
+            \fontsize{15bp}{25bp}\selectfont\Author\\
+            \fontsize{15bp}{26bp}\selectfont{
+                \Advisor\\\Thesis\\\Major\\\Topic\\
+            }
+        }
+    \end{center}
+    \vspace*{24em}
+    \begin{flushleft}
+        \sffamily
+        \fontsize{14bp}{11bp}\selectfont
+        \wsp[2.8]\Date
+    \end{flushleft}
+\end{document}
