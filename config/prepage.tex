@@ -85,6 +85,7 @@
     \pagenumbering{Roman}
     \begin{center}
         \sffamily\Large{\Title}\par
+        \phantomsection
         \sffamily\Large{摘\wsp[1]要}
     \end{center}
     \addcontentsline{toc}{chapter}{摘要}
@@ -105,6 +106,7 @@
     \pagenumberingnoreset{Roman}
     \begin{center}
         \bfseries\Large{\TitleEng}\par
+        \phantomsection
         \Large{Abstract}
     \end{center}
     \addcontentsline{toc}{chapter}{Abstract}
@@ -125,6 +127,7 @@
     \end{center}
     \@starttoc{toc}
     \clearpage
+    \ifPrint\blankpage\fi
     \pagestyle{title}
 }
 
