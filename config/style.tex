@@ -8,7 +8,7 @@
 \renewcommand{\Large}{\fontsize{18bp}{33bp}\selectfont}
 \renewcommand{\large}{\fontsize{15bp}{27.5bp}\selectfont}
 \renewcommand{\normalsize}{\fontsize{12bp}{20bp}\selectfont}
-\renewcommand{\small}{\fontsize{10.5bp}{19.25bp}\selectfont}
+\renewcommand{\small}{\fontsize{10.5bp}{18bp}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{9bp}{16.5bp}\selectfont}
 \renewcommand{\scriptsize}{\fontsize{7.5bp}{13.75bp}\selectfont}
 \renewcommand{\tiny}{\fontsize{6.5bp}{12bp}\selectfont}
@@ -55,10 +55,15 @@
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
 \newtagform{equ}[]{式(}{)}
 \usetagform{equ}
+\captionsetup{font={small}}
+\captionsetup[figure]{labelsep=space}
+\captionsetup[table]{labelsep=space}
 
-% << enumerate sep >>
+% << seperation >>
 \setenumerate[1]{itemsep=0pt,topsep=0pt,parsep=0pt}
 \setitemize[1]{itemsep=0pt,topsep=0pt,parsep=0pt}
+\setlength{\abovecaptionskip}{0em}
+\setlength{\belowcaptionskip}{-1em}
 
 % << chapter >>
 \ifPrint\@openrighttrue\else\@openrightfalse\fi
